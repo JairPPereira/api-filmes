@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Container } from './styles';
-const apiKey = import.meta.env.VITE_API_KEY;
+
 function Details() {
   const { id } = useParams()
   const [movie, setMovie] = useState([])
@@ -10,7 +10,7 @@ function Details() {
   const imagePath = 'https://image.tmdb.org/t/p/w500/'
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`)
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=8ed200f50a6942ca5bc8b5cdec27ff22&language=pt-BR')
     .then(response => response.json())
     .then(data => {
       const {title, poster_path, release_date, overview} = data
