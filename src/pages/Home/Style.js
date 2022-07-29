@@ -25,17 +25,21 @@ export const Movie = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 1rem;
   }
 
   img {
   width: 180px;
   border-radius: 1rem;
   margin-bottom: 2rem;
+
   }
 
   span{
  font-weigth: bold;
  font-size: 120%
+ alingn-item: center;
+ row-gap: 1rem;
  }
  a {
  transition: all 0.3s;
