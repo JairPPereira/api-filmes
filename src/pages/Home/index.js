@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { APIkey } from '../../config/key';
 import { Container, Movie, MovieList } from './styles';
-
+const apiKey = import.meta.env.VITE_API_KEY;
 
 function Home() {
 
@@ -11,7 +10,7 @@ function Home() {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US`)
     .then(response => response.json())
     .then(data => {
       setMovies(data.results)

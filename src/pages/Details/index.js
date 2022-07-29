@@ -1,9 +1,8 @@
 //import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { APIkey } from '../../config/key';
 import { Container } from './styles';
-
+const apiKey = import.meta.env.VITE_API_KEY;
 function Details() {
   const { id } = useParams()
   const [movie, setMovie] = useState([])
@@ -11,7 +10,7 @@ function Details() {
   const imagePath = 'https://image.tmdb.org/t/p/w500/'
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIkey}&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`)
     .then(response => response.json())
     .then(data => {
       const {title, poster_path, release_date, overview} = data
